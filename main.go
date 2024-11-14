@@ -34,7 +34,7 @@ type Game struct {
 
 func (g *Game) String() string {
 	if !g.isFullPlaces() {
-		return "waiting for an oponent to join \n"
+		return "waiting for an opponent to join \n"
 	}
 	var (
 		board string
@@ -125,7 +125,7 @@ func (g *Game) dispatchNextTurn() {
 	}
 	for _, p := range g.Players {
 		if p.Connection != g.CurrentPlayer.Connection {
-			p.Connection.Write([]byte("oponent's turn! \n"))
+			p.Connection.Write([]byte("opponent's turn! \n"))
 			continue
 		}
 		p.Connection.Write([]byte("your turn: \n"))
